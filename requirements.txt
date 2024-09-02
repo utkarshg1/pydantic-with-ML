@@ -1,0 +1,4 @@
+pydantic
+scikit-learn
+streamlit
+fastapi
