@@ -6,7 +6,7 @@ from sklearn.datasets import load_iris
 from sklearn.pipeline import make_pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 
@@ -121,8 +121,9 @@ if __name__ == "__main__":
     # Save model
     name = "iris_pipeline.joblib"
     save_model(pipeline, name)
-    print(f"Model Successfully Saved : ")
+    print(f"Model Successfully Saved filename : {name} ")
     # Load model
     model = load_model(name)
     # Show model score
-    print(model.score(X_test, y_test))
+    test_acc = model.score(X_test, y_test)
+    print(f"Model accuracy in test : {test_acc:.4f}")
